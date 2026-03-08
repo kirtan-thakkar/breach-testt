@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const { default: Container } = require("./Container");
+import Container from "./Container";
 
 const Navbar = () => {
   return (
