@@ -4,7 +4,7 @@ const HeroPage = ()=>{
     return(
         <div className="">
             <Container>
-                <h1 className="text-primary">
+                <h1 className="text-primary font-medium text-4xl tracking-tight">
                     Hero Page
                 </h1>
             </Container>
