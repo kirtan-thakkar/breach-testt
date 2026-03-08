@@ -1,13 +1,12 @@
 import Container from "@/components/Container";
-import Project from "@/components/project";
 import Image from "next/image";
-export default function Home() {
+export default function AboutPage() {
   return (
     <>
       <div className="min-h-[200vh] p-10 md:p-10 mb:pt-20 tracking-tight">
         <Container className="min-h-screen p-4 md:p-10">
           <h1 className="text-primary text-2xl font-medium tracking-tighter md:text-4xl">
-            Hello
+            About Me
           </h1>
           <p className="text-secondary max-w-lg pt-4 text-sm md:text-base">
             I am a second year comp-sci student. I am a hardworking and
@@ -16,7 +15,6 @@ export default function Home() {
             credibility. I craft web apps with Nextjs mongodb framer motion, and
             Gsap
           </p>
-          <Project />
         </Container>
       </div>
     </>
