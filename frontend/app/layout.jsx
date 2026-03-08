@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${outfit.className} antialiased`}
+        className={`${outfit.className} antialiased bg-neutral-200`}
       >
         {children}
       </body>
