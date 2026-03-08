@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav>
       <Container>
         <div className="flex justify-between items-center py-8 px-6 rounded-lg shadow-aceternity">
-          <h1 className="text-primary cursor-pointer"> Logo</h1>
+          <Link href="/" className="text-primary cursor-pointer"> Logo</Link>
           <div className="flex justify-evenly items-center gap-4">
             <Link href="/login" className="text-primary cursor-pointer">Login</Link>
             <h3 className="text-primary cursor-pointer">Link2</h3>
