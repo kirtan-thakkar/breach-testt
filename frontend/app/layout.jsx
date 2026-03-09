@@ -1,9 +1,11 @@
-import { Outfit } from "@next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
-const outfit = Outfit({
+
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "700"],
 });
+
 export const metadata = {
   title: "Breach",
   description: "Breach test app",
@@ -13,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${outfit.className} antialiased bg-neutral-200`}
+        className={`${dmSans.className} antialiased bg-neutral-200`}
       >
         {children}
       </body>
