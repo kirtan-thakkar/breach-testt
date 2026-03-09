@@ -23,7 +23,7 @@ const HeroPage = () => {
           </span>
         </h1>
         <Image src="/hero.jpg" width={200} height={200} alt="code to image" className="object-cover size-full rounded-xl" />
-
+        
         </div>
       </Container>
     </div>
