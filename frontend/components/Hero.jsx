@@ -48,7 +48,7 @@ const HeroPage = () => {
             Get Started
           </RainbowButton>
 
-          <div className="py-14 w-[1203px]">
+          <div className="py-14 w-300.75">
             <Safari
               url="magicui.design"
               imageSrc="https://placehold.co/1200x750?text=Hello+World"
