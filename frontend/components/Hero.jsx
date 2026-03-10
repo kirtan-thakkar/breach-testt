@@ -32,15 +32,6 @@ const HeroPage = () => {
             </span>
           </h1>
 
-          {/* Can add image either safari mockup according to the problem statement */}
-          {/* <Image
-            src="/hero.jpg"
-            width={200}
-            height={200}
-            alt="code to image"
-            className="object-cover size-full rounded-xl"
-          /> */}
-
           <p className="text-secondary text-center tracking-normal w-full max-w-xl">
             Transform your code into stunning visuals with our AI-powered code
             to image generator. Whether you're a developer, designer, or content
@@ -55,7 +46,10 @@ const HeroPage = () => {
             Get Started
           </RainbowButton>
           <div className="w-[1203px]">
-            <Safari url="magicui.design" imageSrc="https://placehold.co/1200x750?text=Hello+World" />
+            <Safari
+              url="magicui.design"
+              imageSrc="https://placehold.co/1200x750?text=Hello+World"
+            />
           </div>
         </div>
       </Container>
