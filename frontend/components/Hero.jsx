@@ -16,8 +16,8 @@ const HeroPage = () => {
           <h1
             className={`  font-medium text-6xl  tracking-tighter text-center bg-clip-text text-primary `}
           >
-            Convert your code into a beautiful image <br></br>
-            using our{" "}
+            Code into a beautiful image <br></br>
+            {" "}
             <Highlighter action="underline" color="#FF9800">
               Ai-Powered Code{" "}
             </Highlighter>
@@ -26,13 +26,24 @@ const HeroPage = () => {
               "Image generator"
             </span>
           </h1>
-          <Image
+          
+          {/* Can add image either safari mockup according to the problem statement */}
+          {/* <Image
             src="/hero.jpg"
             width={200}
             height={200}
             alt="code to image"
             className="object-cover size-full rounded-xl"
-          />
+          /> */}
+
+          <p className="text-secondary text-center tracking-normal w-full max-w-xl">
+            Transform your code into stunning visuals with our AI-powered code to
+            image generator. Whether you're a developer, designer, or content
+            creator, our tool allows you to effortlessly convert your code into
+          </p>
+
+          
+
         </div>
       </Container>
     </div>
