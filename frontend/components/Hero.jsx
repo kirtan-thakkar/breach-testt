@@ -7,6 +7,7 @@ import { Safari } from "./ui/safari";
 import Image from "next/image";
 import { Highlighter } from "@/components/ui/highlighter";
 import ScrollReveal from "./TextReveal";
+import ChoosePage from "./Choose";
 const instrumentalSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: ["400"],
@@ -33,7 +34,7 @@ const HeroPage = () => {
             </span>
           </h1>
 
-          <p className="text-secondary text-center tracking-normal w-full max-w-xl">
+          <p className="text-lg text-secondary text-center tracking-normal w-full max-w-xl">
             Transform your code into stunning visuals with our AI-powered code
             to image generator. Whether you're a developer, designer, or content
             creator, our tool allows you to effortlessly convert your code into
@@ -47,7 +48,7 @@ const HeroPage = () => {
             Get Started
           </RainbowButton>
 
-          <div className="w-[1203px]">
+          <div className="py-14 w-[1203px]">
             <Safari
               url="magicui.design"
               imageSrc="https://placehold.co/1200x750?text=Hello+World"
@@ -69,10 +70,13 @@ const HeroPage = () => {
               the digital world with confidence and agility.
             </ScrollReveal>
           </div> */}
-          <p className="text-primary text-center tracking-tight max-w-2xl text-5xl font-medium">
+          <p className="py-10 text-[clamp(1.6rem,4vw,3rem)]  text-primary text-center tracking-tight max-w-2xl text-5xl font-medium">
             Simplicity, performance, and security, empowering you to navigate
             the digital world with confidence and agility.
           </p>
+        </div>
+        <div>
+          <ChoosePage />
         </div>
       </Container>
     </div>
