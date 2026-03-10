@@ -22,7 +22,7 @@ const HeroPage = () => {
       <Container>
         <div className="flex flex-col items-center justify-center gap-6">
           <h1
-            className={` text-[clamp(1.6rem,4vw,3rem)]  font-medium text-6xl  tracking-tighter text-center text-primary `}
+            className={`  font-medium text-6xl  tracking-tighter text-center text-primary `}
           >
             Code into a beautiful image <br></br>{" "}
             <Highlighter action="underline" color="#FF9800">
@@ -70,9 +70,9 @@ const HeroPage = () => {
               the digital world with confidence and agility.
             </ScrollReveal>
           </div> */}
-          <p className="py-10 text-[clamp(1.6rem,4vw,3rem)]  text-primary text-center tracking-tight max-w-2xl text-5xl font-medium">
-            Simplicity, performance, and security, empowering you to navigate
-            the digital world with confidence and agility.
+          <p className="py-14  text-primary text-center tracking-tighter leading-13 max-w-4xl text-5xl font-medium">
+            Simplicity, performance, and security,<br></br> empowering you to navigate
+            the digital <br></br>world with confidence and agility.
           </p>
         </div>
         <div>
