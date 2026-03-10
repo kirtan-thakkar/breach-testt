@@ -70,7 +70,7 @@ const HeroPage = () => {
               the digital world with confidence and agility.
             </ScrollReveal>
           </div> */}
-          <p className="py-14  text-primary text-center tracking-tighter leading-13 max-w-4xl text-5xl font-medium">
+          <p className="py-18 mt-6  text-primary text-center tracking-tighter leading-13 max-w-4xl text-5xl font-medium ">
             Simplicity, performance, and security,<br></br> empowering you to navigate
             the digital <br></br>world with confidence and agility.
           </p>
