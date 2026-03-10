@@ -6,6 +6,7 @@ import { DM_Sans, Geist } from "next/font/google";
 import { Safari } from "./ui/safari";
 import Image from "next/image";
 import { Highlighter } from "@/components/ui/highlighter";
+import ScrollReveal from "./TextReveal";
 const instrumentalSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: ["400"],
@@ -18,9 +19,9 @@ const HeroPage = () => {
   return (
     <div className="py-35">
       <Container>
-        <div className="container flex flex-col items-center justify-center gap-6">
+        <div className="flex flex-col items-center justify-center gap-6">
           <h1
-            className={`  font-medium text-6xl  tracking-tighter text-center bg-clip-text text-primary `}
+            className={`  font-medium text-6xl  tracking-tighter text-center text-primary `}
           >
             Code into a beautiful image <br></br>{" "}
             <Highlighter action="underline" color="#FF9800">
@@ -45,12 +46,33 @@ const HeroPage = () => {
           >
             Get Started
           </RainbowButton>
+
           <div className="w-[1203px]">
             <Safari
               url="magicui.design"
               imageSrc="https://placehold.co/1200x750?text=Hello+World"
             />
           </div>
+
+          {/* Add textReveal component by urself if that does not work iterate with below */}
+          {/* <div className="h-screen flex justify-center items-center">
+            <ScrollReveal
+              baseOpacity={0.1}
+              enableBlur={true}
+              baseRotation={3}
+              blurStrength={5}
+              staggerDelay={0.05}
+              containerClassName="text-center leading-[3rem]"
+              textClassName="max-w-2xl mx-auto block"
+            >
+              Simplicity, performance, and security, empowering you to navigate
+              the digital world with confidence and agility.
+            </ScrollReveal>
+          </div> */}
+          <p className="text-primary text-center tracking-tight max-w-2xl text-5xl font-medium">
+            Simplicity, performance, and security, empowering you to navigate
+            the digital world with confidence and agility.
+          </p>
         </div>
       </Container>
     </div>

@@ -1,56 +1,120 @@
-"use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useMemo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 
-const App = () => {
-  const wrapperRef = useRef(null);
-  const lines = [{text: 'Lorem ipsum dolor sit amet,'},{text: 'consectetur adipiscing elit.'}, {text: 'Sed non risus.'},{text: 'Suspendisse lectus tortor, dignissim vel,'}, {text: 'luctus pulvinar, hendrerit id, lorem.'}];
+const ScrollReveal = ({
+  children,
+  scrollContainerRef,
+  enableBlur = true,
+  baseOpacity = 0.1,
+  baseRotation = 3,
+  blurStrength = 4,
+  containerClassName = "",
+  textClassName = "",
+  rotationEnd = "bottom bottom",
+  wordAnimationEnd = "bottom bottom",
+}) => {
+  const containerRef = useRef(null);
+
+  const splitText = useMemo(() => {
+    const text = typeof children === "string" ? children : "";
+    return text.split("").map((char, index) => {
+      if (char === " ") return <span key={index}>&nbsp;</span>;
+      return (
+        <span className="inline-block character" key={index}>
+          {char}
+        </span>
+      );
+    });
+  }, [children]);
 
   useEffect(() => {
-    if (wrapperRef.current) {
-      const chars = gsap.utils.toArray(".char");
-      gsap
-        .timeline({
+    const el = containerRef.current;
+    if (!el) return;
+
+    const scroller =
+      scrollContainerRef && scrollContainerRef.current
+        ? scrollContainerRef.current
+        : window;
+
+    gsap.fromTo(
+      el,
+      { transformOrigin: "0% 50%", rotate: baseRotation },
+      {
+        ease: "none",
+        rotate: 0,
+        scrollTrigger: {
+          trigger: el,
+          scroller,
+          start: "top bottom",
+          end: rotationEnd,
+          scrub: true,
+        },
+      },
+    );
+
+    const wordElements = el.querySelectorAll(".character");
+
+    gsap.fromTo(
+      wordElements,
+      { opacity: baseOpacity, willChange: "opacity" },
+      {
+        ease: "none",
+        opacity: 1,
+        stagger: 0.02,
+        scrollTrigger: {
+          trigger: el,
+          scroller,
+          start: "top bottom-=20%",
+          end: wordAnimationEnd,
+          scrub: true,
+        },
+      },
+    );
+
+    if (enableBlur) {
+      gsap.fromTo(
+        wordElements,
+        { filter: `blur(${blurStrength}px)` },
+        {
+          ease: "none",
+          filter: "blur(0px)",
+          stagger: 0.02,
           scrollTrigger: {
-            trigger: wrapperRef.current,
-            start: "center center",
+            trigger: el,
+            scroller,
+            start: "top bottom-=20%",
+            end: wordAnimationEnd,
             scrub: true,
-            pin: ".textRevealWrapper",
-            markers: true,
-          }
-        })
-        .to(
-          chars,
-          {
-            opacity: 1,
-            stagger: 0.08
           },
-          0
-        );
+        },
+      );
     }
-  }, []);
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, [
+    scrollContainerRef,
+    enableBlur,
+    baseRotation,
+    baseOpacity,
+    rotationEnd,
+    wordAnimationEnd,
+    blurStrength,
+  ]);
 
   return (
-    <div className="page">
-      <div className="color">scroll</div>
-      <div className="textRevealWrapper">
-        <div ref={wrapperRef} className="text">
-          {lines.map((line, lineKey) => (
-            <div className="line" key={lineKey}>
-              {line.text.split("").map((char, charKey) => (
-                <span className="char" key={`${lineKey}-${charKey}`}>
-                  {char}
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="color">scroll</div>
-    </div>
+    <h2 ref={containerRef} className={`py-5 ${containerClassName}`}>
+      <p
+        className={`text-[clamp(1.6rem,4vw,3rem)]  font-medium ${textClassName}`}
+      >
+        {splitText}
+      </p>
+    </h2>
   );
 };
 
-
+export default ScrollReveal;
