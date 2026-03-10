@@ -21,7 +21,7 @@ const HeroPage = () => {
       <Container>
         <div className="flex flex-col items-center justify-center gap-6">
           <h1
-            className={`  font-medium text-6xl  tracking-tighter text-center text-primary `}
+            className={` text-[clamp(1.6rem,4vw,3rem)]  font-medium text-6xl  tracking-tighter text-center text-primary `}
           >
             Code into a beautiful image <br></br>{" "}
             <Highlighter action="underline" color="#FF9800">
