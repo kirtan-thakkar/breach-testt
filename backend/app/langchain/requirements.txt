@@ -5,3 +5,4 @@ faiss-cpu
 langchain-ollama 
 pypdf
 langchain-groq 
+ollama
