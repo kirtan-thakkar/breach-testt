@@ -4,3 +4,4 @@ bs4
 faiss-cpu
 langchain-ollama 
 pypdf
+langchain-groq 
