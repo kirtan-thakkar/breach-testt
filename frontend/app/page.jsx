@@ -6,7 +6,7 @@ import HeroPage from "@/components/Hero";
 export default function Home() {
   return (
     <Container>
-      <section className="sticky z-10 top-4 ">
+      <section className="sticky z-100 top-4 backdrop-blur-md ">
         <Navbar />
       </section>
       <section>

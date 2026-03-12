@@ -23,7 +23,7 @@ const Navbar = () => {
       }}
       >
         <Container>
-          <div className="flex justify-between items-center py-8 px-6 rounded-lg shadow-aceternity sticky backdrop-blur-md bg-white/30">
+          <div className="flex justify-between items-center py-8 px-6 rounded-lg shadow-aceternity backdrop-blur-xl">
             <Link href="/" className="text-primary cursor-pointer">
               {" "}
               Logo
