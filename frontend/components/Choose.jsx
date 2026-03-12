@@ -95,7 +95,7 @@ const ChoosePage = () => {
                 }}
                 transition={{
                   duration: 0.3,
-                  delay: index * 0.1,
+                  delay: index * 0.15,
                   ease: "easeInOut"
                 }}
                 className="w-full"

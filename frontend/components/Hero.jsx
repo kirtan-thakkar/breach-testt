@@ -69,7 +69,7 @@ const HeroPage = () => {
             creator, our tool allows you to effortlessly convert your code into
           </motion.p>
 
-          <motion.div
+          <motion.div className="flex justify-center w-full"
             initial={{
               opacity: 0,
               filter: "blur(12px)",
@@ -134,7 +134,7 @@ const HeroPage = () => {
           initial={{
             opacity:0,
             filter:"blur(12px)",
-            y:15
+            y:10
           }}
           whileInView={{
             opacity:1,
@@ -142,8 +142,8 @@ const HeroPage = () => {
             y:0
           }}
           transition={{
-            duration:0.3,
-            delay:0.3,
+            duration:0.4,
+            delay:0.2,
             ease:"easeInOut"
           }}
           className="py-18 mt-6  text-primary text-center tracking-tighter leading-13 max-w-4xl text-5xl font-medium ">
