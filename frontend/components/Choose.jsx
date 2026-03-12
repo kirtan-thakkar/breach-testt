@@ -5,6 +5,7 @@ import {
   IconProgressCheck,
   IconDeviceImac,
 } from "@tabler/icons-react";
+import { motion } from "motion/react";
 const ChoosePage = () => {
   const whyChooseGrid = [
     {
@@ -34,21 +35,71 @@ const ChoosePage = () => {
     <div>
       <Container>
         <div className="py-30 mt-10 h-screen flex flex-col items-center gap-4">
-          <div>
-            <h1 className="text-primary tracking-tighter  text-5xl font-medium">
+          <motion.div
+          initial={{
+            opacity:0,
+            y:5,
+            filter:"blur(10px)",
+          }}
+          whileInView={{
+            opacity:1,
+            y:0,
+            filter:"blur(0px)",
+          }}
+          transition={{
+            duration:0.3,
+            delay:0.3,
+            ease:"easeInOut"
+          }}
+          >
+            <h1 className="text-primary tracking-tighter text-5xl font-medium">
               Why Choose App-Name?
             </h1>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+          initial={{
+            opacity:0,
+            y:5,
+            filter:"blur(10px)",
+          }}
+          whileInView={{
+            opacity:1,
+            y:0,
+            filter:"blur(0px)",
+          }}
+          transition={{
+            duration:0.3,
+            delay:0.5,
+            ease:"easeInOut"
+          }}
+          >
             <p className="text-md text-secondary font-medium text-center">
               Benefits designed to provide a seamless,<br></br> secure, and
               accessible experience for all users.
             </p>
-          </div>
+          </motion.div>
 
           <div className="h-56 grid grid-cols-1 w-full md:grid-cols-4 gap-5 divide-x divide-y divide-neutral-300 border-neutral-300 mt-10 shadow-aceternity">
             {whyChooseGrid.map((item, index) => (
-              <div key={index} className="w-full">
+              <motion.div
+                key={index}
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                  filter: "blur(10px)",
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  filter: "blur(0px)",
+                }}
+                transition={{
+                  duration: 0.3,
+                  delay: index * 0.1,
+                  ease: "easeInOut"
+                }}
+                className="w-full"
+              >
                 <div className="flex divide-x flex-col items-start gap-4 ">
                   <div className="ml-2 mt-4 flex items-center justify-center  rounded-[50%] bg-neutral-200 border border-neutral-300 size-16">
                     {item.img}
@@ -58,7 +109,7 @@ const ChoosePage = () => {
                     <p className="text-primary font-medium">{item.description}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
