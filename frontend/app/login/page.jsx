@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { motion } from "motion/react";
 import Navbar from "@/components/Navbar";
 
 const Login = () => {
@@ -71,17 +72,78 @@ const Login = () => {
   };
   return (
     <section>
-      <Navbar />
-      <form
+      <section className="sticky z-100 top-4 backdrop-blur-md ">
+        <Navbar />
+      </section>
+      <motion.form
         className="max-w-2xl mx-auto py-10 px-4 w-full"
         onSubmit={handleSubmit}
+        initial={{
+          opacity: 0,
+          y: 24,
+          filter: "blur(12px)",
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+        }}
+        transition={{
+          duration: 0.4,
+          ease: "easeOut",
+        }}
       >
-        <div className="py-10 bg-white shadow-aceternity rounded-2xl flex flex-col gap-6">
-          <h1 className="text-primary text-2xl md:text-3xl font-medium tracking-tight text-center">
+        <motion.div
+          className="py-10  shadow-aceternity rounded-2xl flex flex-col gap-6"
+          initial={{
+            opacity: 0,
+            y: 16,
+            filter: "blur(8px)",
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+          }}
+          transition={{
+            duration: 0.3,
+            delay: 0.15,
+            ease: "easeInOut",
+          }}
+        >
+          <motion.h1
+            initial={{
+              opacity: 0,
+              filter: "blur(8px)",
+            }}
+            animate={{
+              opacity: 1,
+              filter: "blur(0px)",
+            }}
+            transition={{
+              duration: 0.3,
+              delay: 0.25,
+            }}
+            className="text-primary text-2xl md:text-3xl font-medium tracking-tight text-center"
+          >
             {isLogin ? "Welcome Back" : "Create your Account"}
-          </h1>
+          </motion.h1>
 
-          <div className="max-w-xl w-full mx-auto flex flex-col gap-4">
+          <motion.div
+            className="max-w-xl w-full mx-auto flex flex-col gap-4"
+            initial={{
+              opacity: 0,
+              y: 12,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.3,
+              delay: 0.3,
+            }}
+          >
             {error && (
               <div className="p-3 bg-red-100 text-red-600 rounded-md text-sm border border-red-200">
                 {error}
@@ -151,9 +213,9 @@ const Login = () => {
                 ? "Don't have an account? Sign Up"
                 : "Already have an account? Login"}
             </button>
-          </div>
-        </div>
-      </form>
+          </motion.div>
+        </motion.div>
+      </motion.form>
     </section>
   );
 };
